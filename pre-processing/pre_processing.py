@@ -3,9 +3,6 @@
 
 # #### Import dependencies
 
-# In[1]:
-
-
 import pandas as pd
 import numpy as np
 import librosa
@@ -14,10 +11,8 @@ import matplotlib.pyplot as plt
 
 from os import listdir
 from os.path import isfile, join,split
-# onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 
 
-# In[2]:
 RAW_DATA_DIR = r'D:\python\Audio_dataset\Raw_data'
 
 PREPROCESSED_DIR = r'D:\python\Audio_dataset\Preprocessed_data'
@@ -25,7 +20,7 @@ PREPROCESSED_DIR = r'D:\python\Audio_dataset\Preprocessed_data'
 # start_time = time.time()
 
 
-# In[3]:
+
 for f in listdir(RAW_DATA_DIR):
 
     file = join(RAW_DATA_DIR,f)
@@ -36,25 +31,11 @@ for f in listdir(RAW_DATA_DIR):
     print("Processing audio file ",filename)
 
 
-    # In[4]:
-
-
-    # import IPython.display as ipd
-    # ipd.Audio('car+door.wav')
-
-
     # #### Load track
-
-    # In[5]:
-
-
     y, sr = librosa.load(file)
 
     # print(len(y)) #data points
     # print(sr) #sampling rate
-
-
-    # In[6]:
 
 
     # librosa.display.waveplot(y, sr=sr)
@@ -62,31 +43,19 @@ for f in listdir(RAW_DATA_DIR):
 
     # #### Trim leading and trailing silence from an audio signal.
 
-    # In[7]:
-
-
     x, index = librosa.effects.trim(y)
     # print(librosa.get_duration(y), librosa.get_duration(x))
-
-
-    # In[8]:
-
 
     # librosa.display.waveplot(x, sr=sr)
 
 
     # #### Spectrogram
 
-    # In[9]:
-
-
     hop_length = 192
     n_fft = 1024
 
 
     # N -point FFT on each frame to calculate the frequency spectrum, which is also called Short-Time Fourier-Transform (STFT)
-
-    # In[10]:
 
 
     D = np.abs(librosa.stft(x, n_fft=n_fft, hop_length=hop_length))
@@ -100,8 +69,6 @@ for f in listdir(RAW_DATA_DIR):
     # Adjustments : 
     # - transform both the y-axis (frequency) to log scale
     # - amplitude to Decibels (which is like the log scale of amplitudes)
-
-    # In[11]:
 
 
     DB = librosa.amplitude_to_db(D, ref=np.max)
@@ -117,8 +84,6 @@ for f in listdir(RAW_DATA_DIR):
 
     # #### Mel Spectrogram : a Spectrogram with the Mel Scale as its y axis.
 
-    # In[12]:
-
 
     n_mels = 128
     mel = librosa.filters.mel(sr=sr, n_fft=n_fft, n_mels=n_mels)
@@ -126,15 +91,10 @@ for f in listdir(RAW_DATA_DIR):
 
     # It partitions the Hz scale into bins, and transforms each bin into a corresponding bin in the Mel Scale, using a overlapping triangular filters.
 
-    # In[13]:
-
 
     # librosa.display.specshow(mel, sr=sr, hop_length=hop_length, x_axis='linear')
     # plt.colorbar()
     # plt.title('Filter bank for converting from Hz to mels.')
-
-
-    # In[14]:
 
 
     mel_10 = librosa.filters.mel(sr=sr, n_fft=n_fft, n_mels=10)
@@ -143,17 +103,11 @@ for f in listdir(RAW_DATA_DIR):
     # plt.title('10 mels.');
 
 
-    # In[15]:
-
 
     # plt.plot(D[:, 1]);
     # plt.plot(mel.dot(D[:, 1]));
     # plt.legend(labels=['Hz', 'mel']);
     # plt.title('One sampled window for example, before and after converting to mel.');
-
-
-    # In[16]:
-
 
     n_mels = 128
 
@@ -162,7 +116,6 @@ for f in listdir(RAW_DATA_DIR):
 
     # librosa.display.specshow(S_DB, sr=sr, hop_length=hop_length, x_axis='time', y_axis='mel');
     # plt.colorbar(format='%+2.0f dB');
-
 
     # #### Links
 
@@ -173,9 +126,6 @@ for f in listdir(RAW_DATA_DIR):
     # - https://librosa.github.io/librosa/generated/librosa.display.specshow.html
     # - https://librosa.github.io/librosa/generated/librosa.display.specshow.html
 
-    # In[17]:
-
-
     librosa.display.specshow(S_DB, sr=sr, hop_length=hop_length)
 
     filename = filename.split('.')[0] + '.jpg'
@@ -183,7 +133,5 @@ for f in listdir(RAW_DATA_DIR):
 
     plt.savefig(join(PREPROCESSED_DIR,filename))
 
-
-# In[18]:
 
 
