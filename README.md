@@ -6,7 +6,8 @@ This repository contains exploratory code/scripts for audio preprocessing and mo
 <hr>
 
 ### Datasets
-- <a href="https://www.kaggle.com/c/freesound-audio-tagging-2019/data">Urban sounds: FSDKaggle2019 dataset</a>
+- Urban sounds:
+  - <a href="https://www.kaggle.com/c/freesound-audio-tagging-2019/data">Urban sounds: FSDKaggle2019 dataset</a>
 - Animal sounds:
   - <a href="https://github.com/karolpiczak/ESC-50">ESC-50</a>
   - <a href="https://github.com/chathuravithakshana/Animal-Sound-Dataset-Research-2019-Sri-Lanka">Open source dataset 1</a>
