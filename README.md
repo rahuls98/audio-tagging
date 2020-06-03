@@ -11,6 +11,6 @@ Audio tagging is the process of inferring descriptive labels from audio clips. T
   - <a href="https://github.com/karolpiczak/ESC-50">ESC-50</a>
 - Animal sounds:
   - <a href="https://github.com/karolpiczak/ESC-50">ESC-50</a>
-  - <a href="https://github.com/chathuravithakshana/Animal-Sound-Dataset-Research-2019-Sri-Lanka">Open source dataset 1</a>
-  - <a href="https://github.com/adiengineer/Animal-sounds-Embedded-Classifier">Open source dataset 2</a>
-  - <a href="https://github.com/YashNita/Animal-Sound-Dataset">Open source dataset 3</a>
+  - <a href="https://github.com/chathuravithakshana/Animal-Sound-Dataset-Research-2019-Sri-Lanka">Open source dataset 1</a> - Animal-Sound-Dataset-Research-2019-Sri-Lanka
+  - <a href="https://github.com/adiengineer/Animal-sounds-Embedded-Classifier">Open source dataset 2</a> - Animal-sounds-Embedded-Classifier
+  - <a href="https://github.com/YashNita/Animal-Sound-Dataset">Open source dataset 3</a> - Animal-Sound-Classification-Using-A-Convolutional-Neural-Network
