@@ -8,6 +8,7 @@ Audio tagging is the process of inferring descriptive labels from audio clips. T
 ### Datasets
 - Urban sounds:
   - <a href="https://www.kaggle.com/c/freesound-audio-tagging-2019/data">Urban sounds: FSDKaggle2019 dataset</a>
+  - <a href="https://github.com/karolpiczak/ESC-50">ESC-50</a>
 - Animal sounds:
   - <a href="https://github.com/karolpiczak/ESC-50">ESC-50</a>
   - <a href="https://github.com/chathuravithakshana/Animal-Sound-Dataset-Research-2019-Sri-Lanka">Open source dataset 1</a>
